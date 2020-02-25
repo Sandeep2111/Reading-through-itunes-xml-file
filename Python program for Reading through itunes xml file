@@ -9,7 +9,7 @@ import sqlite3
 conn=sqlite3.connect('trackdbp.sqlite')
 cur=conn.cursor()
 
-#deleting any existing table so that if the file is made to run multiple times the created table and records are deleted
+#deleting any existing table so that if the file is made to run multiple times the created table and records are deleted and creating the file
 
 cur.executescript('''
 DROP TABLE IF EXISTS Artist;
@@ -17,7 +17,6 @@ DROP TABLE IF EXISTS Album;
 DROP TABLE IF EXISTS Track;
 
 
-#creating the tables.
 
 CREATE TABLE Artist(
 	id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
